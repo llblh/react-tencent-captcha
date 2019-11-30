@@ -18,15 +18,6 @@ sed -i '' '3i\
 ' "$file"
 echo -e "\033[32m[ 版本号：$1 ]\033[0m"
 
-# 清除
-echo -e "\033[35m[ Clean Start ]\033[0m"
-nwb clean-module && nwb clean-demo
-echo -e "\033[35m[ Clean End ]\033[0m"
-# build
-echo -e "\033[35m[ Build Start ]\033[0m"
-nwb build-react-component
-echo -e "\033[35m[ Build End ]\033[0m"
-
 # 提交 git
 git add -A
 git commit -m "deploy $1"
