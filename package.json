@@ -1,6 +1,6 @@
 {
   "name": "@carpenter/react-tencent-captcha",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "腾讯验证码 react 组件",
   "main": "lib/index.js",
   "module": "es/index.js",
