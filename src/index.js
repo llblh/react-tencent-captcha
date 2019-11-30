@@ -30,7 +30,7 @@ export default class extends Component {
     const { appid, callback, options, onRefChild } = this.props;
     const captcha = new window.TencentCaptcha(this.captcha, appid, callback, { ...options });
     this.captcha = captcha;
-    if (onRefChild && typeof onRefChild !== 'function') {
+    if (onRefChild && typeof onRefChild === 'function') {
       onRefChild(this.captcha);
     }
   }

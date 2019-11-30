@@ -15,6 +15,9 @@ class Demo extends Component {
     console.log(res);
   }
 
+  show = () => {
+    this.captcha.show();
+  }
   // 销毁
   destroy = () => {
     this.captcha.destroy();
@@ -23,6 +26,7 @@ class Demo extends Component {
   render() {
     return <div>
       <h1>腾讯验证码</h1>
+      <a onClick={this.show}>点我啊！！！！</a>
       <TencentCaptcha
         appid="2028109764"
         callback={this.captchaCallback}
