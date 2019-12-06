@@ -4,6 +4,9 @@ import {render} from 'react-dom'
 import TencentCaptcha from '../../src'
 
 class Demo extends Component {
+  state = {
+    show: true,
+  };
 
   captcha = null;
 
@@ -17,6 +20,11 @@ class Demo extends Component {
 
   show = () => {
     this.captcha.show();
+    setTimeout(() => {
+      this.setState({
+        show: false,
+      })
+    }, 3000);
   }
   // 销毁
   destroy = () => {
@@ -27,13 +35,13 @@ class Demo extends Component {
     return <div>
       <h1>腾讯验证码</h1>
       <a onClick={this.show}>点我啊！！！！</a>
-      <TencentCaptcha
+      {this.state.show ? <TencentCaptcha
         appid="2028109764"
         callback={this.captchaCallback}
         onRefChild={this.onRefChild}
       >
         点我啊！
-      </TencentCaptcha>
+      </TencentCaptcha> : null}
     </div>
   }
 }
