@@ -20,7 +20,6 @@ export default class extends Component {
   }
   componentWillUnmount() {
     if (this.captcha) {
-      this.captcha.destroy();
       this.captcha = null;
     }
   }
