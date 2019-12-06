@@ -4,8 +4,6 @@ export default class extends Component {
 
   captcha = null;
 
-  captchaSource = null;
-
   componentDidMount() {
     if (typeof window.TencentCaptcha !== 'function') {
       const URL = 'https://ssl.captcha.qq.com/TCaptcha.js';
@@ -21,9 +19,10 @@ export default class extends Component {
     }
   }
   componentWillUnmount() {
-    this.captcha = null;
-    this.captchaSource.destroy();
-    this.captchaSource = null;
+    if (this.captcha) {
+      this.captcha.destroy();
+      this.captcha = null;
+    }
   }
 
   initCaptcha = () => {
